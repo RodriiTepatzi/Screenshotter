@@ -25,7 +25,7 @@ namespace Screenshotter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("F11")]
+        [global::System.Configuration.DefaultSettingValueAttribute("A")]
         public string Hotkey_1 {
             get {
                 return ((string)(this["Hotkey_1"]));
@@ -37,25 +37,37 @@ namespace Screenshotter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Hotkey_2 {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Mode {
             get {
-                return ((string)(this["Hotkey_2"]));
+                return ((bool)(this["Mode"]));
             }
             set {
-                this["Hotkey_2"] = value;
+                this["Mode"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Mode {
+        public string Path {
             get {
-                return ((string)(this["Mode"]));
+                return ((string)(this["Path"]));
             }
             set {
-                this["Mode"] = value;
+                this["Path"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Sound {
+            get {
+                return ((bool)(this["Sound"]));
+            }
+            set {
+                this["Sound"] = value;
             }
         }
     }

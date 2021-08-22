@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Title="Screenshotter" Height="450" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="Screenshotter" Height="290.667" Width="333.333" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing" MouseDown="Window_MouseDown" Focusable="False" Icon="pack://siteoforigin:,,,/Resources/camera.png" Closed="Window_Closed">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,26 +17,25 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <Grid Height="97" Margin="55,3,55,0" VerticalAlignment="Top">
-            <Label Content="Modo: " Margin="6,12,181,66" Padding="0"/>
-            <RadioButton IsChecked="False" Content="Simple" Margin="58,10,108,65" Focusable="False" ToolTip="Modo simple." Height="22" />
-            <RadioButton IsChecked="False" Content="Avanzado" Margin="136,10,9,65" Focusable="False" ToolTip="Modo avanzado." Height="22" />
-        </Grid>
-        <Grid HorizontalAlignment="Left" Height="389" Margin="16,22,0,0" VerticalAlignment="Top" Width="318">
-            <GroupBox Header="Salida" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" HorizontalAlignment="Left" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="299">
+        <Grid HorizontalAlignment="Left" Height="252" Margin="10,1,0,0" VerticalAlignment="Top" Width="308">
+            <GroupBox Header="Salida" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" HorizontalAlignment="Left" Height="100" Margin="0,8,0,0" VerticalAlignment="Top" Width="299">
                 <Grid Margin="0,-3,0,13" Width="284" Height="38" VerticalAlignment="Bottom">
                     <Button x:Name="selectFolderBtn" Content="Abrir" HorizontalAlignment="Left" Margin="199,0,0,2" Width="75" Click="selectFolderBtn_Click" Height="30" VerticalAlignment="Bottom"/>
                     <Label x:Name="selectedFolderLabel" Content="Selecciona una ruta." HorizontalAlignment="Left" Margin="10,0,0,4" Width="184" Cursor="Hand" Height="24" VerticalAlignment="Bottom" MouseLeftButtonDown="selectedFolderLabel_MouseLeftButtonDown"/>
                 </Grid>
             </GroupBox>
 
-            <GroupBox Header="Hotkey" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" HorizontalAlignment="Left" Height="115" Margin="0,133,0,0" VerticalAlignment="Top" Width="299">
+            <GroupBox Header="Hotkey" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" HorizontalAlignment="Left" Height="119" Margin="0,108,0,0" VerticalAlignment="Top" Width="299">
                 <Grid Margin="0,0,0,-3" Width="284" Height="66" VerticalAlignment="Bottom">
-                    <Button x:Name="singleKeyBtn" Content="S" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Padding="10,0" Click="singleKeyBtn_Click" KeyDown="singleKeyBtn_KeyDown"/>
-                    <Label x:Name="keyMessage" Content="" HorizontalAlignment="Left" Margin="12,43,0,0" VerticalAlignment="Top" Padding="0" FontSize="10"/>
+                    <ToggleButton x:Name="modeToggle" Style="{StaticResource MaterialDesignSwitchAccentToggleButton}" ToolTip="Modo" IsChecked="True" Height="20" Margin="10,4,234,42" Width="40" Unchecked="modeToggle_Unchecked" />
+                    <Button x:Name="singleKeyBtn" Content="S" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Padding="10,0" Click="singleKeyBtn_Click" KeyDown="singleKeyBtn_KeyDown"/>
+                    <Button x:Name="ctrlKey_btn" Content="Ctrl" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Padding="10,0" Visibility="Hidden"/>
+
 
                 </Grid>
             </GroupBox>
+            <Label x:Name="keyMessage" Content="" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Padding="0" FontSize="10"/>
+            <ToggleButton x:Name="soundToggle" Style="{StaticResource MaterialDesignActionToggleButton}" ToolTip="Sonido" Content="{materialDesign:PackIcon Kind=AudioOff}" materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=Audio}" Margin="277,0,9,1" Width="22" Height="22" Unchecked="soundToggle_Unchecked" Checked="soundToggle_Checked" VerticalAlignment="Bottom" />
         </Grid>
     </Grid>
 </Window>

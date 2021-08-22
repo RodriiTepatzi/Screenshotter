@@ -3,13 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="Hotkey_1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">F11</Value>
+      <Value Profile="(Default)">A</Value>
     </Setting>
-    <Setting Name="Hotkey_2" Type="System.String" Scope="User">
+    <Setting Name="Mode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Path" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Mode" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="Sound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
