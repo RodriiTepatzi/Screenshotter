@@ -99,7 +99,7 @@ namespace Screenshotter
         private void CapturarImagen()
         {
             CheckPath();
-            string filename = path + "\\" + DateTime.Now.ToString("dd-MMMM-yyyy HH-mm") + ".jpg";
+            string filename = path + "\\" + DateTime.Now.ToString("dd-MMMM-yyyy HH-mm-ss") + ".jpg";
             //Console.WriteLine(filename);
             using (Bitmap bmpScreenCapture = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
                                                Screen.PrimaryScreen.Bounds.Height))
@@ -153,6 +153,7 @@ namespace Screenshotter
             if (!string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
             {
                 folderOutput = folderBrowserDialog.SelectedPath;
+                path = folderOutput;
                 Properties.Settings.Default.Path = folderOutput;
                 Properties.Settings.Default.Save();
                 selectedFolderLabel.Content = folderOutput;
@@ -253,6 +254,8 @@ namespace Screenshotter
             singleKeyBtn.Margin = new Thickness(10, 29, 0, 0);
             ctrlKey_btn.Visibility = Visibility.Hidden;
             simpleMode = true;
+            Properties.Settings.Default.Mode = true;
+            Properties.Settings.Default.Save();
             RegisterKeys();
         }
 
@@ -261,6 +264,8 @@ namespace Screenshotter
             singleKeyBtn.Margin = new Thickness(67, 29, 0, 0);
             ctrlKey_btn.Visibility = Visibility.Visible;
             simpleMode = false;
+            Properties.Settings.Default.Mode = false;
+            Properties.Settings.Default.Save();
             RegisterKeys();
         }
 
